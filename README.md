@@ -1,3 +1,3 @@
-# U-air
+# SQL
 repo for SQL learning
 
