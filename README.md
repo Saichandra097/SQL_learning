@@ -1,2 +1,3 @@
 # U-air
-repo for airflow from udemy course
+repo for SQL learning
+
