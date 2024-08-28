@@ -1,0 +1,1 @@
+SUBSTRING(string,start_position,lenght)

@@ -1,0 +1,4 @@
+to get the string between different symbols
+#learn
+
+SUBSTRING(identifier, LEN(LEFT(identifier, CHARINDEX('-', identifier)+1)),LEN(identifier) - LEN(LEFT(identifier, CHARINDEX('-', identifier))) - LEN(RIGHT(identifier, CHARINDEX('@', (REVERSE(identifier)))))) 
