@@ -1,0 +1,7 @@
+extracting characters from right 
+
+RIGHT('string',number of characters u want to extract from right)
+
+ex: '679-hasj'
+
+select RIGHT('name',4) as name from table 

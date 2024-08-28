@@ -1,0 +1,7 @@
+if you want to extract character after a symbol '/' '-'
+
+RIGHT(string,CHARINDEX(string,reverse(string))-1)
+
+example : 123-eracad
+select RIGHT(name,CHARINDEX(name,reverse(string)-1))
+

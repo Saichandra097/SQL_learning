@@ -1,0 +1,7 @@
+extract string from middle of the string
+
+MIDDLE('string','staring_position',ending_position_relative_to_staring_position)
+
+ex : ID-67895-END
+
+select MIDDLE('string',4,5) as name from table

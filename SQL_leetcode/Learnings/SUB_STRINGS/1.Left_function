@@ -1,0 +1,7 @@
+Extracting characters from left of string 
+
+LEFT('STRING',number of character to extract from left)
+
+ex :79834-guask
+
+select LEFT('name',5) as name from table

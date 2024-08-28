@@ -1,0 +1,11 @@
+if you want to extract characters before a sybol such as '@' '#' '*' '-'
+
+
+left(string,CHARINDEX('-',string)-1)
+
+example :
+qas-15382
+
+select from left(name,CHARINDEX('-',name)-1) as name from table 
+
+output qas
