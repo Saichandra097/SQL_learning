@@ -1,3 +1,4 @@
 To get the string between the  indentical symbols
 
 SUBSTRING(string,LEN(LEFT(string,CHARINDEX('-',string)+1)),LEN(string) - LEN(LEFT(string, CHARINDEX('-', string))) - LEN(RIGHT(string, CHARINDEX('-', (REVERSE(string))))))
+
