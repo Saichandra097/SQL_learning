@@ -1,0 +1,45 @@
+IF(expression,exp_true,exp_false)
+expr_true : returns when condition is exp_true
+expr_false : returns when the condition is false 
+
+select 
+SUM(IF((state='approved'),1,0)) as count_approved from Transactions
+
+
+IF() function is more compact and is suitable for simple,binary
+conditions
+
+CASE statement is more versatile for handling multiple conditions and complex scenarios 
+
+
+IF() can be used in subquery 
++---------+-------------------------------------+-------------+---------+--------+--------+------------+----------+---------+------------+
+| book_id | book_name                           | isbn_no     | cate_id | aut_id | pub_id | dt_of_pub  | pub_lang | no_page | book_price |
++---------+-------------------------------------+-------------+---------+--------+--------+------------+----------+---------+------------+
+| BK001   | Introduction to Electrodynamics     | 0000979001  | CA001   | AUT001 | P003   | 2001-05-08 | English  |     201 |      85.00 |
+| BK002   | Understanding of Steel Construction | 0000979002  | CA002   | AUT002 | P001   | 2003-07-15 | English  |     300 |     105.50 |
+| BK003   | Guide to Networking                 | 0000979003  | CA003   | AUT003 | P002   | 2002-09-10 | Hindi    |     510 |     200.00 |
+| BK004   | Transfer  of Heat and Mass          | 0000979004  | CA002   | AUT004 | P004   | 2004-02-16 | English  |     600 |     250.00 |
+| BK005   | Conceptual Physics                  | 0000979005  | CA001   | AUT005 | P006   | 2003-07-16 | NULL     |     345 |     145.00 |
+| BK006   | Fundamentals of Heat                | 0000979006  | CA001   | AUT006 | P005   | 2003-08-10 | German   |     247 |     112.00 |
+| BK007   | Advanced 3d Graphics                | 0000979007  | CA003   | AUT007 | P002   | 2004-02-16 | Hindi    |     165 |      56.00 |
+| BK008   | Human Anatomy                       | 0000979008  | CA005   | AUT008 | P006   | 2001-05-17 | German   |      88 |      50.50 |
+| BK009   | Mental Health Nursing               | 0000979009  | CA005   | AUT009 | P007   | 2004-02-10 | English  |     350 |     145.00 |
+
+
+SELECT book_name,isbn_no,
+IF(
+    (select count(*) from book_mast where pub_lang ='English')>
+    (select count(*) from book_mast where pub_lang <> 'English'),
+    ((CONCAT("Pages"),no_page)),
+    (CONCAT("Price", book_price))
+) AS "Page/price"
+from book_mast;
+
+SELECT 
+book_id,
+book_name,
+IF(pub_lang IS NULL,'N/A',others) as "Pub.Language"
+from
+book_mast
+
