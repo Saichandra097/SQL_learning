@@ -1,0 +1,5 @@
+COALSESCE(EXPRESSION1,"VALUE")
+
+IF THE EXPRESSION1 IS NULL THEN IT RETURNS VALUE OR ELSE EXPRESSION1
+
+we can fill a column having nulls with some value 
