@@ -1,0 +1,8 @@
+Pattern	Meaning
+‘a%’	Match strings that start with ‘a’
+‘%a’	Match strings with end with ‘a’
+‘a%t’	Match strings that contain the start with ‘a’ and end with ‘t’.
+‘%wow%’	Match strings that contain the substring ‘wow’ in them at any position.
+‘_wow%’	Match strings that contain the substring ‘wow’ in them at the second position.
+‘_a%’	Match strings that contain ‘a’ at the second position.
+‘a_ _%’	Match strings that start with ‘a and contain at least 2 more characters.
